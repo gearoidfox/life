@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+    <title>Conway's Game of Life</title>
+  </head>
+  <body>
+    <div id="content">
+      <canvas id="lifeCanvas"></canvas>
+      <div id="mini"><button class="small" id="unhidebutton" onclick="unhide()">Options</button></div>
+      <div id="controls">
+        <h2>Life</h2>
+        <hr>
+        <h3>Initial conditions:</h3>
+        <div>
+          <span>
+            <label for="density">Density</label>
+            <input type="number" id="density" max=1 min=0 step=0.01 value=0.15>
+          </span>
+        </div>
+        <div>
+          <button onclick="randomise();">Randomise</button>
+        </div>
+        <div>
+          <button onclick="clearGrid();">Clear</button>
+        </div>
+        <div>
+          <h3>Boundary conditions:</h3>
+          <div>
+            <span>
+              <label for="empty">Empty</label>
+              <input type="radio" name="boundary" value="empty" id="empty" checked="checked">
+            </span>
+          </div>
+          <div>
+            <span>
+              <label for="wrap">Wrap</label>
+              <input type="radio" name="boundary" value="wrap" id="wrap">
+            </span>
+          </div>
+          <div>
+            <h3>Update:</h3>
+            <span><label>Speed</label><input type="number" value=3 id="speed" min=1 max=8 step=1></span>
+            <span id="pauseresume">
+                <button id="pausebutton" onclick="pause();">Pause</button>
+                <button id="resumebutton" onclick="resume();">Resume</button>
+            </span>
+            <div>
+                <button id="stepbutton" onclick="step();">Step</button>
+            </div>
+          </div>
+          <div>
+            <button id="hidebutton" class="small" onclick="hide();">Hide this</button>
+          </div>
+        </div>
+      </div>
+      <script src="js/life.js"></script>
+  </body>
+</html>
